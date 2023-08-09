@@ -1,0 +1,155 @@
+   #ia-face {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 400px;
+      height: 200px;
+      margin: 20px auto;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    #ia-face img {
+      width: 100%;
+      height: 100%;
+      margin: 0 20px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    #ia-face img:hover {
+      transform: scale(1.1);
+    }
+
+    #ia-face img.thinking {
+      animation: rotate 1s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+
+    #chat {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      margin: 20px auto;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    #chat-log {
+      height: 300px;
+      padding: 10px;
+      overflow-y: auto;
+    }
+
+    ::-webkit-scrollbar {
+      width: 0px;
+    }
+
+
+    #chat-log .message {
+      margin-bottom: 20px;
+    }
+
+    #chat-log .incoming {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    #chat-log .incoming p {
+      padding: 10px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      max-width: 80%;
+    }
+
+    #chat-log .outgoing {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    #chat-log .outgoing p {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      max-width: 80%;
+    }
+
+    #chat-input {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background-color: #f2f2f2;
+    }
+
+    #chat-input input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-right: 10px;
+      transition: box-shadow 0.2s ease-in-out;
+    }
+
+    #chat-input input[type="text"]:focus {
+      box-shadow: 0 0 5px #ccc;
+    }
+
+    #chat-input button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    #chat-input button:hover {
+      background-color: #3e8e41;
+    }
+
+@media (max-width: 600px) {
+  #ia-face, #chat {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  #ia-face {
+    height: 20vh;
+  }
+
+  #chat-log {
+    height: 50vh;
+  }
+
+  #chat-input {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+  }
+
+  #chat-input input[type="text"] {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  #chat-input button {
+    width: 100%;
+  }
+}
+
