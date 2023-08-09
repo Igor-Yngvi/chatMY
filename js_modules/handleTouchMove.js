@@ -1,5 +1,6 @@
 const touchIaFace = document.querySelector('#ia-face');
 const touchChat = document.querySelector('#chat');
+const touchConfig = document.querySelector('#config');
 let touchStartX;
 let touchIsSwiping = false;
 
@@ -16,6 +17,7 @@ document.addEventListener('touchmove', (event) => {
 
     if (touchDeltaX > 50) {
         // Arrasto para a direita
+        touchConfig.style.display = "none";
         touchIaFace.style.display = "flex";
         touchChat.style.display = "flex";
         touchIsSwiping = false;
@@ -23,6 +25,7 @@ document.addEventListener('touchmove', (event) => {
         // Arrasto para a esquerda
         touchIaFace.style.display = "none";
         touchChat.style.display = "none";
+        touchConfig.style.display = "block";
         touchIsSwiping = false;
     }
 });

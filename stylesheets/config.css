@@ -1,0 +1,10 @@
+    #config {
+        display: none;
+        flex-direction: column;
+        width: 400px;
+        height: 619px;
+        margin: 20px auto;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+    }
