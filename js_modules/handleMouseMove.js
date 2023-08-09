@@ -1,32 +1,32 @@
-const iaFace = document.querySelector('#ia-face');
-const chat = document.querySelector('#chat');
-let startX;
-let isSwiping = false;
+const mouseIaFace = document.querySelector('#ia-face');
+const mouseChat = document.querySelector('#chat');
+let mouseStartX;
+let mouseIsSwiping = false;
 
 document.addEventListener('mousedown', (event) => {
-    startX = event.clientX;
-    isSwiping = true;
+    mouseStartX = event.clientX;
+    mouseIsSwiping = true;
 });
 
 document.addEventListener('mousemove', (event) => {
-    if (!isSwiping) return;
+    if (!mouseIsSwiping) return;
 
-    const currentX = event.clientX;
-    const deltaX = currentX - startX;
+    const mouseCurrentX = event.clientX;
+    const mouseDeltaX = mouseCurrentX - mouseStartX;
 
-    if (deltaX > 50) {
+    if (mouseDeltaX > 50) {
         // Arrasto para a direita
-        iaFace.style.display = "flex";
-        chat.style.display = "flex";
-        isSwiping = false;
-    } else if (deltaX < -50) {
+        mouseIaFace.style.display = "flex";
+        mouseChat.style.display = "flex";
+        mouseIsSwiping = false;
+    } else if (mouseDeltaX < -50) {
         // Arrasto para a esquerda
-        iaFace.style.display = "none";
-        chat.style.display = "none";
-        isSwiping = false;
+        mouseIaFace.style.display = "none";
+        mouseChat.style.display = "none";
+        mouseIsSwiping = false;
     }
 });
 
 document.addEventListener('mouseup', () => {
-    isSwiping = false;
+    mouseIsSwiping = false;
 });
