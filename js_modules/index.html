@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OpenAI API Integration</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>OpenAI API Integration</h1>
+    <textarea id="inputText" placeholder="Digite sua pergunta aqui"></textarea>
+    <button id="submitButton">Enviar</button>
+    <div id="response"></div>
+
+    <script>
+        const apiKey = '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';
+        const apiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions';
+
+        $('#submitButton').click(function() {
+            const inputText = $('#inputText').val();
+
+            $.ajax({
+                type: 'POST',
+                url: apiUrl,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                data: JSON.stringify({
+                    prompt: inputText,
+                    max_tokens: 50  // Ajuste conforme necessário
+                }),
+                success: function(data) {
+                    const response = data.choices[0].text;
+                    $('#response').text(response);
+                },
+                error: function(error) {
+                    console.error('Erro:', error);
+                    $('#response').text('Ocorreu um erro ao processar a solicitação.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
