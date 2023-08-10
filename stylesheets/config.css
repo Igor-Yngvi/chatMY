@@ -1,10 +1,69 @@
-    #config {
-        display: none;
-        flex-direction: column;
-        width: 400px;
-        height: 619px;
-        margin: 20px auto;
-        border: 2px solid #ccc;
-        border-radius: 5px;
-        overflow: hidden;
-    }
+#config {
+    display: none;
+    flex-direction: column;
+    width: 400px;
+    height: 619px;
+    margin: 20px auto;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#config ul {
+    margin: 20px auto;
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 33.333%);
+    grid-auto-rows: 100px;
+}
+
+#config ul li {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#config ul li:hover {
+    transform: scale(0.9);
+    filter: brightness(1.2);
+}
+
+#tema-escuro {
+    background: #4CAF50 url("../icons/tema-escuro.png");
+}
+
+#add-ext {
+    background: #4CAF50 url("../icons/add-ext.png");
+}
+
+#ia-plus {
+    background: #4CAF50 url("../icons/ia-plus.png");
+}
+
+#mais-temas {
+    background: #4CAF50 url("../icons/mais-temas.png");
+}
+
+#options-name {
+    width: 400px;
+    height: 30px;
+    margin: 20px auto;
+    border: 2px solid #ccc;
+    text-align: center;
+    background: #f2f2f2;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#options-name p {
+   font-family: sans-serif;
+   text-transform: uppercase;
+}
+

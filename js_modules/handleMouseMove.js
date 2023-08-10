@@ -1,6 +1,7 @@
 const mouseIaFace = document.querySelector('#ia-face');
 const mouseChat = document.querySelector('#chat');
 const mouseConfig = document.querySelector('#config');
+const mouseOptions = document.querySelector('#options-name');
 let mouseStartX;
 let mouseIsSwiping = false;
 
@@ -18,6 +19,7 @@ document.addEventListener('mousemove', (event) => {
     if (mouseDeltaX > 50) {
         // Arrasto para a direita
         mouseConfig.style.display = "none";
+        mouseOptions.style.display = "none";
         mouseIaFace.style.display = "flex";
         mouseChat.style.display = "flex";
         mouseIsSwiping = false;
@@ -26,6 +28,7 @@ document.addEventListener('mousemove', (event) => {
         mouseIaFace.style.display = "none";
         mouseChat.style.display = "none";
         mouseConfig.style.display = "block";
+        mouseOptions.style.display = "flex";
         mouseIsSwiping = false;
     }
 });
