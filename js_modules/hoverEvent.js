@@ -1,3 +1,6 @@
+const html = document.querySelector('html');
+const buttonEvent = document.querySelector('#chat-input button');
+const chatInputEvent = document.querySelector('#chat-input');
 const temaEscuro = document.getElementById('tema-escuro');
 const addExt = document.getElementById('add-ext');
 const iaPlus = document.getElementById('ia-plus');
@@ -12,6 +15,11 @@ temaEscuro.addEventListener('mouseout', () => {
     optionsNameParagraph.textContent = 'Opções';
 });
 
+temaEscuro.addEventListener('click', () => {
+    html.style.background = "#353535";
+    chatInputEvent.style.background = "#000";
+    buttonEvent.style.background = "#000"
+});
 
 addExt.addEventListener('mouseover', () => {
     optionsNameParagraph.textContent = 'Adicionar Extenção';
